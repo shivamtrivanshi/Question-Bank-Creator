@@ -2,6 +2,8 @@ class UI {
 
     constructor() {
         this.posts = document.querySelector("#posts");
+        this.questionInput = document.querySelector("#question");
+        this.answerInput = document.querySelector("#answer");
     }
 
     showPosts(posts) {
@@ -23,6 +25,38 @@ class UI {
             `;
         });
         this.posts.innerHTML = output;
+    }
+
+    showAlert(message, className) {
+        //Clear CurrentAlert
+        this.clearAlert();
+        //Create div
+        const div = document.createElement("div");
+        //Add Classes
+        div.className = className;
+        //Add Message
+        div.appendChild(document.createTextNode(message));
+        //Grab parents
+        const container = document.querySelector(".postContainer");
+        const cardForm = document.querySelector(".card-form");
+        //Insert Before
+        container.insertBefore(div, cardForm);
+        //Set Timeout
+        setTimeout(() => {
+            document.querySelector(".alert").remove();
+        }, 3000);
+    }
+
+    clearAlert() {
+        const currentAlert = document.querySelector(".alert")
+        if(currentAlert) {
+            currentAlert.remove();
+        }
+    }
+
+    clearFields() {
+        this.questionInput.value = "";
+        this.answerInput.value = "";
     }
 }
 
