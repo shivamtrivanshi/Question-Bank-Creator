@@ -1,3 +1,7 @@
 .delete {
     color: red;
 }
+
+.capitalize{
+    text-transform: capitalize;
+}

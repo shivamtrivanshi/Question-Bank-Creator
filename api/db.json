@@ -1,39 +1,9 @@
 {
   "posts": [
     {
-      "id": 1,
-      "question": "What is your Name?",
-      "answer": "My name is Shivam"
-    },
-    {
-      "id": 2,
-      "question": "What is your Name?",
-      "answer": "My name is Shivam"
-    },
-    {
-      "id": 3,
-      "question": "What is your Name?",
-      "answer": "My name is Shivam"
-    },
-    {
-      "question": "What is your Last Name?",
-      "answer": "My last Name is Shivam",
-      "id": 4
-    },
-    {
-      "question": "How are you?",
-      "answer": "I am Fine",
-      "id": 5
-    },
-    {
-      "question": "How Are you?",
-      "answer": "Cool!!",
-      "id": 6
-    },
-    {
       "question": "What is my Name?",
-      "answer": "Shivam",
-      "id": 7
+      "answer": "Shivam Trivanshi",
+      "id": 1
     }
   ]
 }
