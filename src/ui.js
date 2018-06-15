@@ -15,7 +15,7 @@ class UI {
                 <div class="card mb-3">
                     <div class="card-body">
                         <h4 class="card-title capitalize">${post.question}</h4>
-                        <p class="capitalize">${post.answer}</p>
+                        <pre class="capitalize">${post.answer}</pre>
                         <a href="#" class="edit card-link" data-id="${post.id}">
                         <i class="fa fa-pencil"></i>
                         </a>

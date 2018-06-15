@@ -2,6 +2,11 @@
     color: red;
 }
 
+pre {
+    font-family: Arial;
+    font-size: 15px;
+}
+
 .capitalize{
     text-transform: capitalize;
 }
