@@ -9376,7 +9376,7 @@ var UI = function () {
         value: function showPosts(posts) {
             var output = "";
             posts.forEach(function (post) {
-                output += "\n                <div class=\"card mb-3\">\n                    <div class=\"card-body\">\n                        <h4 class=\"card-title capitalize\">" + post.question + "</h4>\n                        <p class=\"capitalize\">" + post.answer + "</p>\n                        <a href=\"#\" class=\"edit card-link\" data-id=\"" + post.id + "\">\n                        <i class=\"fa fa-pencil\"></i>\n                        </a>\n                        <a href=\"#\" class=\"delete card-link\" data-id=\"" + post.id + "\">\n                            <i class=\"fa fa-remove\"></i>\n                        </a>\n                    </div>\n                </div>\n            ";
+                output += "\n                <div class=\"card mb-3\">\n                    <div class=\"card-body\">\n                        <h4 class=\"card-title capitalize\">" + post.question + "</h4>\n                        <pre class=\"capitalize\">" + post.answer + "</pre>\n                        <a href=\"#\" class=\"edit card-link\" data-id=\"" + post.id + "\">\n                        <i class=\"fa fa-pencil\"></i>\n                        </a>\n                        <a href=\"#\" class=\"delete card-link\" data-id=\"" + post.id + "\">\n                            <i class=\"fa fa-remove\"></i>\n                        </a>\n                    </div>\n                </div>\n            ";
             });
             this.posts.innerHTML = output;
         }
