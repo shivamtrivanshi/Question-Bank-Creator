@@ -74,6 +74,9 @@ class UI {
             this.submitBtn.textContent = "Update Post";
             this.submitBtn.className = "post-submit btn btn-warning btn-block";
 
+            //if any cancel btn then remove
+            this.removeCancelBtn();
+
             //create cancel button
             const button = document.createElement("button");
 
@@ -96,13 +99,17 @@ class UI {
             this.submitBtn.className = "btn btn-primary btn-block post-submit";
 
             //Remove Cancel btn
-            if(document.querySelector(".post-cancel")) {
-                document.querySelector(".post-cancel").remove();
-            }
+            this.removeCancelBtn();
 
             this.clearIdInput();
 
             this.clearFields();
+        }
+    }
+
+    removeCancelBtn() {
+        if(document.querySelector(".post-cancel")) {
+            document.querySelector(".post-cancel").remove();
         }
     }
 

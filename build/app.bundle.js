@@ -9447,6 +9447,9 @@ var UI = function () {
                 this.submitBtn.textContent = "Update Post";
                 this.submitBtn.className = "post-submit btn btn-warning btn-block";
 
+                //if any cancel btn then remove
+                this.removeCancelBtn();
+
                 //create cancel button
                 var button = document.createElement("button");
 
@@ -9467,13 +9470,18 @@ var UI = function () {
                 this.submitBtn.className = "btn btn-primary btn-block post-submit";
 
                 //Remove Cancel btn
-                if (document.querySelector(".post-cancel")) {
-                    document.querySelector(".post-cancel").remove();
-                }
+                this.removeCancelBtn();
 
                 this.clearIdInput();
 
                 this.clearFields();
+            }
+        }
+    }, {
+        key: "removeCancelBtn",
+        value: function removeCancelBtn() {
+            if (document.querySelector(".post-cancel")) {
+                document.querySelector(".post-cancel").remove();
             }
         }
     }, {
