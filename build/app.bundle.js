@@ -9067,6 +9067,9 @@ document.querySelector("#posts").addEventListener("click", editPost);
 //Listen For Back to Add State
 document.querySelector(".card-form").addEventListener("click", cancelEdit);
 
+//Grab Search text
+document.querySelector("#search-text").addEventListener("keyup", searchQuestion);
+
 function getPosts() {
     _http.http.get("http://localhost:3000/posts").then(function (resData) {
         _ui.ui.showPosts(resData);
@@ -9151,6 +9154,19 @@ function cancelEdit(e) {
         _ui.ui.changeFormState("add");
     }
     e.preventDefault();
+}
+
+function searchQuestion(e) {
+    var searchText = e.target.value.toLowerCase();
+    var posts = document.querySelectorAll(".display-post");
+    posts.forEach(function (question) {
+        var questionText = question.querySelector(".search-title").textContent;
+        if (questionText.toLowerCase().indexOf(searchText) != -1) {
+            question.style.display = "block";
+        } else {
+            question.style.display = "none";
+        }
+    });
 }
 
 /***/ }),
@@ -9376,7 +9392,7 @@ var UI = function () {
         value: function showPosts(posts) {
             var output = "";
             posts.forEach(function (post) {
-                output += "\n                <div class=\"card mb-3\">\n                    <div class=\"card-body\">\n                        <h4 class=\"card-title capitalize\">" + post.question + "</h4>\n                        <pre class=\"capitalize\">" + post.answer + "</pre>\n                        <a href=\"#\" class=\"edit card-link\" data-id=\"" + post.id + "\">\n                        <i class=\"fa fa-pencil\"></i>\n                        </a>\n                        <a href=\"#\" class=\"delete card-link\" data-id=\"" + post.id + "\">\n                            <i class=\"fa fa-remove\"></i>\n                        </a>\n                    </div>\n                </div>\n            ";
+                output += "\n                <div class=\"card display-post mb-3\">\n                    <div class=\"card-body\">\n                        <h4 class=\"card-title search-title capitalize\">" + post.question + "</h4>\n                        <pre class=\"capitalize\">" + post.answer + "</pre>\n                        <a href=\"#\" class=\"edit card-link\" data-id=\"" + post.id + "\">\n                        <i class=\"fa fa-pencil\"></i>\n                        </a>\n                        <a href=\"#\" class=\"delete card-link\" data-id=\"" + post.id + "\">\n                            <i class=\"fa fa-remove\"></i>\n                        </a>\n                    </div>\n                </div>\n            ";
             });
             this.posts.innerHTML = output;
         }
