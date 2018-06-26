@@ -12,9 +12,9 @@ class UI {
         let output = "";
         posts.forEach((post) => {
             output += `
-                <div class="card mb-3">
+                <div class="card display-post mb-3">
                     <div class="card-body">
-                        <h4 class="card-title capitalize">${post.question}</h4>
+                        <h4 class="card-title search-title capitalize">${post.question}</h4>
                         <pre class="capitalize">${post.answer}</pre>
                         <a href="#" class="edit card-link" data-id="${post.id}">
                         <i class="fa fa-pencil"></i>

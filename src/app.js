@@ -16,6 +16,9 @@ document.querySelector("#posts").addEventListener("click", editPost);
 //Listen For Back to Add State
 document.querySelector(".card-form").addEventListener("click", cancelEdit);
 
+//Grab Search text
+document.querySelector("#search-text").addEventListener("keyup", searchQuestion);
+
 
 
 
@@ -24,10 +27,13 @@ function getPosts() {
     http.get("http://localhost:3000/posts")
     .then((resData) => {
         ui.showPosts(resData);
-    }).catch((err) => {
+    })
+    .catch((err) => {
         console.log(err);
     })
 }
+
+
 
 
 function addPost() {
@@ -108,9 +114,28 @@ function editPost(e) {
     e.preventDefault()
 }
 
+
+
+
+
 function cancelEdit(e) {
     if(e.target.classList.contains("post-cancel")) {
         ui.changeFormState("add");
     }
     e.preventDefault();
+}
+
+
+function searchQuestion(e) {
+    const searchText = e.target.value.toLowerCase();
+    const posts = document.querySelectorAll(".display-post");
+    posts.forEach((question) => {
+        const questionText = question.querySelector(".search-title").textContent;
+        if(questionText.toLowerCase().indexOf(searchText) != -1) {
+            question.style.display = "block";
+        }else {
+            question.style.display = "none";
+        }
+    });
+
 }

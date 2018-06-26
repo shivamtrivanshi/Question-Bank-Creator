@@ -14,6 +14,11 @@
       "question": "What is Callback hell in Node.js?",
       "answer": "Callback hell is phenomenon that afflicts a javascript developer when he tries to execute multiple asynchronous operations one after The other, \nIn other words it is called pyramid of doom.",
       "id": 3
+    },
+    {
+      "question": "What is \"Closure\" in JavaScript?",
+      "answer": "A closure is a function defined inside another function (called the parent function).",
+      "id": 4
     }
   ]
 }
